@@ -1,1 +1,1 @@
-Un pequeño código echo en python 
+Un pequeño código hecho en python 
