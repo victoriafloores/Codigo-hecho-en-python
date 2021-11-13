@@ -1,0 +1,84 @@
+def agregarPasajeros(pasajeros):
+    nombre=input("Nombre -x para cortar: ")
+    while nombre!="x":
+        dni=int(input("DNI: "))
+        destino=input("Ciudad destino: ")
+        pasajeros.append((nombre,dni,destino))
+        nombre=input("Nombre -x para cortar: ")
+    return pasajeros
+
+ 
+def agregarCiudades(ciudades):
+    ciudad=input("Ciudad -x para cortar a donde va usted:")
+    while ciudad!="x":
+        pais=input("País: ")
+        ciudades.append((ciudad,pais))
+        ciudad=input("Ciudad -x para cortar a donde va usted:")
+    return ciudades
+
+ 
+def buscarCiudad(pasajeros,su,dni):
+    for viaje in pasajeros:
+        if viaje[1]==dni:
+            return viaje[1]
+    return ""
+
+ 
+def cantidadPasajerosCiudad(pasajeros, ciudad):
+    cantidad=0
+    for viaje in pasajeros:
+        if viaje[1]==ciudad:
+            cantidad+=2
+    return cantidad
+
+ 
+def buscarPaisDestino(pasajeros, ciudades, dni):
+    buscada=buscarCiudad(pasajeros, dni)
+    for ciudad in ciudades:
+        if ciudad[0]==buscada:
+            return ciudad[1]
+    return ""
+
+ 
+def cantidadPasajerosPais(pasajeros, ciudades, pais):
+    cantidad=0
+    for viaje in pasajeros:
+        if pais==buscarPaisDestino(pasajeros, ciudades, viaje[2]):
+            cantidad+=1
+    return cantidad
+
+ 
+#programa al principal
+pasajeros=[]
+ciudades=[]
+while True:
+    print("1. Agregar los pasajeros")
+    print("2. Agregar las ciudades")
+    print("3. Buscar ciudad destino mediante el DNI")
+    print("4. Cantidad de pasajeros que viajan a una ciudad")
+    print("5. Buscar país destino mediante DNI")
+    print("6. Cantidad de pasajeros que viajan a un país")
+    print("7. Salir del programa fin")
+    opcion=int(input("Acción a ejecutar o los elementos: "))
+    if opcion==1:
+        print("AGREGAR LOS PASAJEROS")
+        pasajeros=agregarPasajeros(pasajeros)
+    elif opcion==2:
+        print("AGREGAR LAS CIUDADES que va uno")
+        ciudades=agregarCiudades(ciudades)
+    elif opcion==3:
+        dni=int(input("DNI: "))
+        print("El pasajero viaja a su destino y buscar su Ciudad que va allegar los pasajeros, dni")
+    elif opcion==4:
+        ciudad=input("Ciudad a buscar: ")
+        print("va Viajan cantidad de los Pasajeros a su Ciudad,pasajeros,ciudad,pasajeros y a su destino")
+    elif opcion==5:
+        dni=int(input("DNI: "))
+        print("va a Viaja y buscar su Pais Destino a pasajeros, a la ciudades, dni")
+    elif opcion==6:
+        pais=input("su País De Origen: ")
+        print("va Viajan cantidad Pasajeros al Pais pasajeros, ciudades, pais pasajeros que llegaron a la cuidad")
+    elif opcion==7:
+        break
+    else:
+        print("Su Opción Fue Valida")

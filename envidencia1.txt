@@ -1,0 +1,45 @@
+def sumatoria(lista):
+    suma=0
+    for n in lista:
+        suma+=n
+    return suma
+
+def numerosMenores(lista, limite):
+    nueva=[]
+    for n in lista:
+        if n<limite:
+            nueva.append(n)
+    return nueva
+
+ 
+def frecuencias(lista):
+    nueva=[]
+    for n in lista:
+        if [n, lista.count(n)] not in nueva:
+            nueva.append([n, lista.count(n)])
+    return nueva
+
+ 
+#A 
+numeros=[]
+nro=int(input("Número: "))
+while nro!=0:
+    numeros.append(nro)
+    nro=int(input("Número: "))
+#B 
+for tupla in numeros ('fue eliminarse')
+numeros.remove ("fue eliminarse")
+print("Ese número no está entre los ingresados")
+
+#C
+print("Sumatoria de los números, sumatoria sus numeros")
+eliminar=int(input("los Número a eliminar: "))
+
+#D
+limite=int(input("Filtrar sus números menores a: "))
+for n in numerosMenores(numeros, limite):
+    print(n)
+#E
+print("Frecuencias:")
+for tupla in frecuencias(numeros):
+    print(tupla[0],"aparece",tupla[1],"las veces que sean necesario.")

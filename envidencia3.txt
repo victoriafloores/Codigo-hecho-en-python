@@ -1,0 +1,42 @@
+SEPARADOR = ("*" * 20) + "\n"
+otra_lista_vacia = []
+lista_uno = [1, 2, 3, 4]
+print(lista_uno)
+print("LOS SEPARADOR")
+pass
+
+lista_uno.append(5)
+print(lista_uno)
+lista_uno.append((6, 7)) 
+print("lista_1")
+print("LOS SEPARADOR")
+pass
+
+lista_uno.remove((6, 7)) 
+print("lista_1")
+print("LOS SEPARADOR")
+pass
+
+lista_original1 = [3, 4, 2]
+print(lista_original1)
+lista_original1.sort()
+print(lista_original1)
+pass
+
+lista_original2 = [23, 10, 30, 5]
+lista_ordenadamente = sorted(lista_original2)
+print(f"a su lista original = {lista_original2}, y la version ordenadamente es o fue {lista_ordenadamente}")
+print("LOS SEPARADOR")
+pass
+
+print(f"a su lista original = {lista_uno}")
+lista_1_al_seva_a_doblar= []
+for valor in lista_uno:
+ lista_1_al_seva_a_doblar.append('su valor es * 2')
+print(f"Lista resultante, cada elemento a su doble que se dio = {lista_1_al_seva_a_doblar}")
+pass
+lista_1_al_seva_a_doblar = [valor * 2 for valor in lista_uno]
+print(f"Mismo resultado, pero con comprensión de listas es = lista_1_al_seva_a_doblar")
+pass
+lista_valores_sus_pares = [valor for valor in lista_uno if (valor % 2 == 0)]
+print(f"Solamente se agregaron los elementos con valor elegido par o menos : {lista_valores_sus_pares}")
